@@ -2,16 +2,13 @@ import React from "react"
 
 import "../styles/Header.css"
 
-export const Header = (props) => {
-
-  const score = props.score;
-  const bestscore = props.bestscore;
+export const Header = ({score,bestscore}) => {
 
   const header = (
     <header>
       <div>
         <div>Score: {score}</div>
-        <div>Best Score: {bestscore}</div>
+        <div>Best: {bestscore}</div>
       </div>
     </header>
   )

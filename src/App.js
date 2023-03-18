@@ -7,6 +7,7 @@ import { Board } from './components/Board';
 import { Footer } from './components/Footer';
 
 import { monsters } from './game/monsters';
+import {shuffle} from './game/utils'
 
 
 const App = (props) => {
@@ -17,21 +18,9 @@ const App = (props) => {
   const [cards,setCards] = useState(monsters); 
 
   useEffect(()=>{
-    if (score>bestscore) setBestscore(score);
-    shuffleCards();
-  },[score,bestscore])
+    setCards(shuffle(cards));
+  },[])
 
-  const shuffleCards = () => {
-    let shuffled = [...cards]
-      .map(card => ({card, sort: Math.random() *10 }))
-      .sort((a,b) => a.sort - b.sort)
-      .map(({card}) => card)
-    setCards(shuffled);
-  }
-
-  const newScore = () => {
-    setScore(score+1);
-  }
 
   const restartGame = () => {
     setScore(0);
@@ -39,11 +28,13 @@ const App = (props) => {
   }
 
   const handleSelection = (e, card) => {
-    // console.log(card);
-    if(!selectionList.filter(name => name === card.name).length){
+    setCards(shuffle(cards));
+    if(!selectionList.includes(card.name)){
       setSelectionList([...selectionList,card.name]);
-      newScore();
-    } else{
+      let newScore = score+1;
+      setScore(newScore);
+      if (newScore>bestscore) setBestscore(newScore);
+    } else {
       restartGame();
     }
   }

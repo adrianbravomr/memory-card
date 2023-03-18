@@ -4,10 +4,7 @@ import { Card } from "./Card";
 
 import "../styles/Board.css"
 
-export const Board = (props) => {
-
-  const cards = props.cards;
-  const handleSelection = props.handleSelection;
+export const Board = ({cards,handleSelection}) => {
 
   const board = (
     <div className="board-cont">

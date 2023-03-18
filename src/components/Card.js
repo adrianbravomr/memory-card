@@ -1,10 +1,7 @@
 import React from "react";
 import "../styles/Card.css"
 
-export const Card = (props) => {
-
-  const card = props.card;
-  const handleSelection = props.handleSelection;
+export const Card = ({card,handleSelection}) => {
 
   const cardComp = (
     <div 
