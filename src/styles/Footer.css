@@ -1,0 +1,10 @@
+footer{
+  grid-area: footer;
+  background-color: var(--brown);
+  color: white;
+  font-weight: bold;
+  box-shadow: var(--shadow);
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}

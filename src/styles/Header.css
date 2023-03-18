@@ -1,0 +1,14 @@
+header {
+  grid-area: header;
+  background-color: gold;
+  box-shadow: var(--shadow);
+  font-weight: bold;
+}
+
+header div{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+}
