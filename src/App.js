@@ -18,7 +18,7 @@ const App = (props) => {
 
   useEffect(()=>{
     if (score>bestscore) setBestscore(score);
-    // shuffleCards();
+    shuffleCards();
   },[score,bestscore])
 
   const shuffleCards = () => {
