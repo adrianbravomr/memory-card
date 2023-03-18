@@ -12,7 +12,7 @@ export const Card = (props) => {
       id={card.name} 
       onClick={(e)=>{handleSelection(e,card)}}
     >    
-      <img src={card.img}/>
+      <img src={card.img} alt={card.name}/>
       <div>{card.name}</div>
     </div>
   );

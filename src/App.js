@@ -12,14 +12,14 @@ import { monsters } from './game/monsters';
 const App = (props) => {
   
   const [score,setScore] = useState(0);
-  useEffect(()=>{
-    if (score>bestscore) setBestscore(score);
-    shuffleCards();
-  },[score])
-
   const [bestscore,setBestscore] = useState(0);
   const [selectionList,setSelectionList] = useState([]);
   const [cards,setCards] = useState(monsters); 
+
+  useEffect(()=>{
+    if (score>bestscore) setBestscore(score);
+    shuffleCards();
+  },[score,bestscore])
 
   const shuffleCards = () => {
     let shuffled = [...cards]
